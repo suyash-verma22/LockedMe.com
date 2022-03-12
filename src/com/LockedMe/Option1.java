@@ -1,11 +1,11 @@
 package com.LockedMe;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Arrays;
 public class Option1 {
 	
-	static String directory_name = "C:\\Users\\verma\\OneDrive\\Desktop\\Simplilearn\\Projects\\LockedMe.com\\File_Storage\\LockedMe";
+	static String directory_path = "C:\\Users\\verma\\OneDrive\\Desktop\\Simplilearn\\Projects\\LockedMe.com\\File_Storage";
+	static String directory_name = directory_path + "LockedMe";
 	
 	public static Boolean setCurrentDirectory(String new_directory_name)
     {
