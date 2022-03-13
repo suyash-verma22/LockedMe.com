@@ -10,11 +10,7 @@ public class App {
 		
 		Welcome.appInfo();
 		
-		Welcome.chooseOption();
-		
-		
-		
-		
+		Welcome.displayMenu();
 			
 	}
 
