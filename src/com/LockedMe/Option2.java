@@ -2,7 +2,6 @@ package com.LockedMe;
 
 import java.io.File;
 import java.util.Scanner;
-import java.io.IOException;
 import java.util.Arrays;
 import java.io.FileWriter;
 
@@ -40,20 +39,14 @@ public class Option2 {
 		else {
 			try {
 				if(newFile.createNewFile()) {
+					addContentInFile(file_name);
 					System.out.println("New file created with filename: " + fileName);
 				}
-			}catch (IOException e) {
+			}catch (Exception e) {
 				// TODO Auto-generated catch block
 				//e.printStackTrace();
 				System.out.println(e);
 			}
-		}
-		System.out.print("Add content to the file? (y|Y for Yes and n|N for No : ");
-		String choose = scan.next();
-		if(choose.equalsIgnoreCase("y")) {
-			addContentInFile(file_name);
-		}else {
-			
 		}
 	}
 	//delete a file in the directory
@@ -69,27 +62,25 @@ public class Option2 {
 	}
 	//add content in the file
 	public static void addContentInFile(String file_name) {
-		System.out.print("Enter number of lines: ");
-		String line_count = scan.next();
-		int count = Integer.parseInt(line_count);
-		System.out.println();
-		String []lines = new String[count];
-		for(int i=0;i<count;i++) {
-			System.out.println("Enter line " + (i+1) + " : ");
-			lines[i] = scan.nextLine();
-			System.out.println();
-		}
-		File curr_working_file = new File(file_name);
-		if(curr_working_file.canWrite()) {
-			try {
+		try {
+			System.out.print("Enter number of lines: ");
+			int count = Integer.parseInt(scan.next());
+			
+			File curr_working_file = new File(file_name);
+			if(curr_working_file.canWrite()) {
 				FileWriter myWriter = new FileWriter(file_name);
-				for(int i=0;i<count;i++) {
-					myWriter.write(lines[i]);
-				}
+				for(int i=1;i<=count;i++) {
+					System.out.println("Enter line: ");
+					myWriter.write(scan.nextLine() + "\n");
+			    }
 				myWriter.close();
-			}catch(IOException e) {
-				System.out.println(e);
 			}
+			else 
+			{
+				System.out.println("Do not have write access to the file.");
+			}
+		}catch(Exception e) {
+			System.out.println(e);;
 		}
 	}
 }
