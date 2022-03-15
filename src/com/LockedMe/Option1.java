@@ -29,8 +29,9 @@ public class Option1 {
 		File directoryPath = new File(directory_name);
 		String files[] = directoryPath.list();
 		Arrays.sort(files);
-		for(int i=0;i<files.length;i++) {
-			System.out.println(files[i]);
+		System.out.println();
+		for(int i=1;i<=files.length;i++) {
+			System.out.println(i + " -> " + files[i-1]);
 		}
 	}
 }

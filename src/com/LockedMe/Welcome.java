@@ -27,11 +27,11 @@ public class Welcome {
 			int option = scan.nextInt();
 			switch(option) {
 			case 1:
-				System.out.println("Option 1 is selected");
+				System.out.println("Files in the directory are: ");
 				Option1.showFiles();
 				break;
 			case 2:
-				System.out.println("Option 2 is selected");
+				System.out.println("You can perform following operations on files: ");
 				menuForOperationsOnFile();
 				break; 
 			case 3:
